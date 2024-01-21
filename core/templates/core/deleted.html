@@ -1,0 +1,17 @@
+<form method="post" action="{% url "del"  %}">
+    {% csrf_token %}
+    {{ form }}
+        <div class="deleted">
+            <button type="submit">Удалить обьявление</button>
+                </div>
+            <body style="background: url(https://images.hdqwalls.com/wallpapers/lake-minimal-green-4k-c0.jpg);"  >
+        </form>
+
+<style>
+    form{
+        color: aqua;
+    }
+    .deleted{
+        background-image: url(https://image.freepik.com/free-photo/bright-colorful-abstraction-with-gradient_23-2147734140.jpg);
+    }
+</style>

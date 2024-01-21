@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name a product {{ user.name }}
+    {% if user.product_photo %}
+    <img src="{{ user.product_photo.url }}" alt="">
+    {% endif %}
+    {% if user.category_product %}
+    {{ user.category_product }}
+    {% endif %}
+    {% if user.telphone_number %}
+    {{ user.telephone_number }}
+    {% endif %}
+    {% if user.counrty %}
+    {{ user.country }}
+    {% endif %}
+
+
+    
+</body>
+</html>

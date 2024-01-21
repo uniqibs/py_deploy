@@ -1,0 +1,16 @@
+{% for i in user_content  %}
+<img src="{{ i.one_photo.url }}" alt="">
+{% endfor %}
+
+{% for photo in were  %}
+<img src="{{ were.user_photo.url }}" alt="">
+{% endfor %}
+
+
+<h1>.</h1>
+'user': user,
+        'user_content': user_content,
+        "user_photo":user_photo,
+        "user_like":user_like,
+        <!-- "user_card":user_card, -->
+        "user_social":user_social,

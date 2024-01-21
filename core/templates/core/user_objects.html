@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+    
+<div class="user1">
+<body  style="background-color:black ;"  > 
+</div>
+
+
+    {% for photo in user_photo %}
+    {% if photo.user_photo %}
+    <img src="{{ photo.user_photo.url }}" width="400" alt="">
+    {% else %}
+    <img src="https://img.freepik.com/premium-vector/user-profile-icon-flat-style-member-avatar-vector-illustration-isolated-background-human-permission-sign-business-concept_157943-15752.jpg" width="400 " alt="">
+    {% endif %}
+    <h1></h1>
+    <div class="user">
+        {% for content in user_content %}
+        Имяпользователя {{ user.username }}
+        <h1></h1>
+        <a href="{% url "social" %}"><button>Add social </button></a>
+        <h1></h1>
+        Электронная почта  :  {{ user.email }}
+        <h1></h1>
+        Ваши обьявление: {{ content.name }}
+    </div>
+</body>
+
+    <div class="back">
+        <h1></h1>
+    {% endfor %}
+    <a href="{% url "user_publish" %}"><button>добавить обьявление</button></a>
+    {% endfor %}    
+    <h1></h1>
+    <a href="{% url "user_photo" %}"><button>добавить фото</button></a>
+    <div class="user">
+        {% if user.photo.len == 2 %}
+        <p>вы не сможете 2 раза добавить фото</p>
+        {% endif %}
+    <!-- Имя пользователя: {{ user.username }} -->
+<!-- 
+    <div class="user">
+        {% for content in user_content %}
+        Ваши обьявление: {{ content.name }}
+    </div> -->
+    <div class="back">
+        <h1></h1>
+    {% endfor %}
+    <div class="back">
+    <a href="{% url "card_input" %}"><button>добавить карту</button></a>
+        <h1></h1>
+        <a href="{% url "home" %}"><button>назад</button></a>
+        </div>
+        {% for c in user_card %}
+        <p> Номер банковской карты  :  {{ c.card }}</p>
+
+
+
+        {% if c.type_card == 'СБЕРБАНК' %}
+        <img src="https://s.rbk.ru/v1_companies_s3/resized/960xH/media/company_press_release_image/9048bb26-fdef-4b5f-a121-0939485a317a.jpg" width="150" alt="">
+        {% endif %}
+
+        <p>{{ c.type_card  }}</p>
+        {% if c.type_card == 'UNIVERSALBANK' %}
+        <img src="https://th.bing.com/th/id/OIP.xv4pQ15JIQoX9SUSWENyvQHaHa?rs=1&pid=ImgDetMain" width="150" alt="">
+        {% endif %}
+
+        {% if c.type_card == 'IPAKYULI' %}
+        <img src="https://th.bing.com/th/id/OIP.9Ekn0dANb77_FUjMCGhqsQHaHa?w=900&h=900&rs=1&pid=ImgDetMain"  width="150" alt="">
+        {% endif %}
+
+        {% if c.type_card == 'INFIN BANK' %}
+        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/5c/70/f7/5c70f7d9-3abe-2397-3ac2-e26fa374f6ff/source/512x512bb.jpg" width="150" alt="">
+        {% endif %}
+
+        {% if c.type_card == 'HUMO' %}
+        <img src="https://aab.uz/upload/iblock/8ac/8slltzdsqnalxdm5kdexausp863nkjtc.jpg" width="150" alt="">
+        {% endif %}
+
+
+        
+        {% if c.type_card == 'TINKOF' %}
+        <img src="https://acdn.tinkoff.ru/static/pages/files/8386d793-42e5-4396-a47e-45a175d10a7e.png" width="150" alt="">
+        {% endif %}
+
+
+
+
+        {% endfor %}
+
+
+        {% for social in user_social %}
+        <p>{{ social.name }}</p>
+        <p>{{ social.type_social_media }}</p>
+        <!-- This line if for instagram  -->
+        {% if social.type_social_media == 'INSTAGRAM'   %}
+        <img src="https://www.analyticsinsight.net/wp-content/uploads/2022/04/Instagram-Uses-Big-Data-and-Artificial-Intelligence.jpg" width="230" alt="">
+        {% endif %}
+        <!-- This line if for telegram -->
+        {% if social.type_social_media == 'FACEBOOK' %}
+        <img src="https://assets-global.website-files.com/64ccac6f7e04c499c881d2c1/64e386716fbf92d515440193_Facebook-Feature.jpeg" width="250" alt="">
+        {% endif %}
+        <!-- This line if for TELEGRAM   -->
+        {% if social.type_social_media == 'TELEGRAM'  %}
+        <img src="https://w0.peakpx.com/wallpaper/327/366/HD-wallpaper-technology-telegram-logo.jpg" width="200" alt="">
+        {% endif %}
+
+        {% endfor %}
+
+</body>
+</html>
+    
+    
+</body>
+<style>
+.user{
+    color: aqua;
+    font-size: x-large;
+    font-weight: 800;
+    font-style: italic;
+}
+button{
+    background: url(https://images.hdqwalls.com/wallpapers/lake-minimal-green-4k-c0.jpg);
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    font-weight: 800;
+    font-style: italic;
+}
+p{
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+body{
+    background: url(https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg);
+    background-size: 1990px;
+}
+.user_authoficated{
+    background: url(https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg);
+    background-size: 1990;
+
+}
+.user{
+    background-size: 1980px;
+}
+
+
+
+
+
+
+</style>  
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1></h1>
+    <form method="post" action="{% url "del" %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Удалить обьявление</button>
+    </form>
+</body>
+</html>

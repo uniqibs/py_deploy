@@ -1,0 +1,36 @@
+<form  method="post" enctype="multipart/form-data">
+    <h1></h1>
+    {% csrf_token %}
+    <div class="form_c">
+    {{ form }}
+</div>
+    <h1></h1>
+    <button type="submit">Изменить фото</button>
+</form>
+
+
+    
+</body>
+
+
+<style>
+    body{
+        background: url(https://getwallpapers.com/wallpaper/full/d/3/7/491773.jpg);
+        background-size: 1600px;
+    }
+    button{
+        background: url(https://e1.pxfuel.com/desktop-wallpaper/202/603/desktop-wallpaper-gradient-pc-gradient.jpg);
+        font-size: xx-large;
+        font-style: italic;
+    }
+    input{
+        background: url(https://e1.pxfuel.com/desktop-wallpaper/202/603/desktop-wallpaper-gradient-pc-gradient.jpg);
+    }
+    .form_c{
+        background: url(https://e1.pxfuel.com/desktop-wallpaper/202/603/desktop-wallpaper-gradient-pc-gradient.jpg);
+
+    }
+    form{
+        font-variant: unset;
+    }
+</style>

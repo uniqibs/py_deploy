@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">    
+<ul>
+    <li><a href="#">Главная</a></li>
+        <li><a href="{% url "user_publish" %}">добавить обьявление</a></li>
+            <li><a href="{% url 'user_profile' %}">Мой Профиль</a></li>
+        <li><a href="{% url "logout" %}">Выйти из учётной записи</a></li>
+    <li><a href="{% url "product_search" %}"><div class="te-le-gram"><i class="fa-solid fa-magnifying-glass"></i></div></a></li>
+</ul>
+
+
+<!-- <body style="background-image: url(https://images.hdqwalls.com/wallpapers/lake-minimal-green-4k-c0.jpg);" > -->
+
+{% for i in user %}
+
+  <table>
+    <thead>
+        {% if i.one_photo %}
+        <img src="{{ i.one_photo.url }}" width="200" alt="">
+        {% else %}
+        <img src="https://images.hdqwalls.com/wallpapers/lake-minimal-green-4k-c0.jpg" width="90" alt="">
+            {% endif %}
+            <th>{{ i.name }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ i.sell }}</td>
+        </tr>
+        <tr>
+            <td>{{ i.good_or_bad_or_norm }}</td> 
+        </tr>
+        <tr>
+            <td>{{ i.country }}</td>
+        </tr>
+        <tr>
+            <div class="see"><td><a href="{% url "product_id_details" i.id %}"><button>Посмотреть</button></a></td></div>
+    
+        </tr>
+    </tbody>
+</table>
+</tbody>
+
+<h1></h1>
+
+
+{% endfor %}
+<body style="background-color: #333;"></body>
+    
+
+</body>
+
+  <style>
+    .see{
+        color: #ffffff;
+        background: #0077ff;
+    }
+
+
+    table {
+        border-collapse: collapse;
+        width: 9%;
+    }
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 6px;
+        color: #ffffff;
+    }
+    th {
+        background-color: #0080ff;
+    }
+    h2{
+        font-size: x-large;
+        color: darkslategray;
+    }
+    ul {
+            list-style-type: none;
+            margin: 3;
+            padding: 2;
+            background-color: #0062ff;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        li a:hover {
+            background-color: #242323;
+        }
+        li {
+    display: block;
+    width: 200px; 
+}
+.te-le-gram{
+    color: #242323;
+    font-size: x-large;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background: url(https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg);
+    background-size: 300000000000000000000000000000000000000px;
+}

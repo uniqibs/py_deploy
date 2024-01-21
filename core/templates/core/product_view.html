@@ -1,0 +1,44 @@
+
+
+    {% if user.one_photo %}
+    <img src="{{ user.second_photo.url }}" width="500" alt="">
+    <img src="{{ user.one_photo.url }}" width="500" alt="">
+    <!-- <video autoplay muted src="{{ user.video.url }}" width="+700"></video> -->
+
+    {% else %}
+    <img src="https://www.freeiconspng.com/uploads/no-image-icon-11.PNG" width='300'>
+    {% endif %}
+    <h1>Цена :{{ user.sell }}</h1>
+        <h1> Название : {{ user.name }}</h1>
+            <h1> Страна : {{ user.country }}</h1>
+                <h1>Улица {{ user.street }}</h1>
+                    <h1> Телефон номер : {{ user.telphone_number }}</h1>
+                <h1> Качество продукта : {{ user.good_or_bad_or_norm }}</h1>
+            <h1> Описание продукта : {{ user.ofical }}</h1>
+        <h1> Имя пользователя : {{ user.user }}</h1>
+    <h1>Электронная почта пользователя :  {{ user.user.email }}</h1>
+<h1>Эту обьявление посмотрели {{ views.viewer }}</h1>
+    <!-- End user objects -->
+    <h1></h1>
+        <a href="{% url "home" %}"><button>Назад</button></a>
+            <h1></h1>
+                <a href=""><button>обновить страницу </button></a>
+        <h1></h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<a href="{% url "ban" %}"><h2><i class="fa-sharp fa-solid fa-ban"></i></h2></a>
+
+<body style="background: url(https://images.hdqwalls.com/wallpapers/lake-minimal-green-4k-c0.jpg);" >
+
+</body>
+
+<body style="background-color: rgb(63, 172, 126);" >
+
+</body>
+<style>
+    h1{
+        color: snow;
+        font-size: x-large;
+        font-weight: 600;
+        font-style: oblique;
+    }
+</style>
